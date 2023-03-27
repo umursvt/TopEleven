@@ -1,0 +1,44 @@
+.images-keeper {
+  margin-top: 280px;
+  width: 100px;
+  height: 150px;
+}
+.images-defance {
+  width: 120px;
+  height: 107px;
+}
+.images-middle {
+  width: 120px;
+  height: 107px;
+}
+.images-forward {
+  margin-top: 150px;
+  width: 120px;
+  height: 107px;
+}
+/* Background */
+.App {
+  width: auto;
+  height: 99vh;
+  background-image: url('../src/img/field/field.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Background and image responsive */
+@media (max-width: 768px) {
+  .App {
+    background-size: contain;
+    background-position: top;
+  }
+}
+@media (max-width: 768px) {
+  .images-keeper {
+    width: 50px;
+    height: 50px;
+
+    background-size: contain;
+    background-position: top;
+  }
+}
