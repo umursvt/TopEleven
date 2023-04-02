@@ -43,7 +43,10 @@ function MiddleChild({ middleName }) {
           src={Middles[middleName]}
           alt=""
         />
-        <div className="fs-5 fw-bold"> {middleName} </div>
+        <div className="fs-5 fw-bold">
+          {' '}
+          <p className="name">{middleName}</p>
+        </div>
       </div>
     </div>
   );

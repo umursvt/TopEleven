@@ -21,6 +21,7 @@ function GoalKeaper() {
     setKeeper([randomKeeper()]);
   };
   //mapping
+
   const goalKeeperList = keepers.map((keeper, index) => {
     return <GoalKeeperChild key={index} keeperName={keeper} />;
   });

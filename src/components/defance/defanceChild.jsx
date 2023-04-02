@@ -34,7 +34,9 @@ function defanceChild({ defanceName }) {
           src={Defanders[defanceName]}
           alt=""
         />
-        <div className=" fs-5 fw-bold "> {defanceName}</div>
+        <div className="   fs-5 fw-bold ">
+          <p className="name-defance">{defanceName}</p>
+        </div>
       </div>
     </div>
   );

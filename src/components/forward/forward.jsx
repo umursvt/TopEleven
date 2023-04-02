@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ForwardChild from '../forward/forwardChild';
+import React, { useEffect, useState } from 'react';
+import ForwardChild from './forwardChild';
 
 function randomForward() {
   const forwardArray = [
@@ -21,12 +21,18 @@ function randomForward() {
   return forwardArray[random];
 }
 
-function Forward() {
+function Forward({ onForwardProp }) {
   const [forwards, setForward] = useState([]);
 
   const handleForward = () => {
-    setForward([...forwards, randomForward()]);
+    setForward((prevForwards) => {
+      const newForwards = [...prevForwards, randomForward()];
+      return newForwards;
+    });
   };
+  useEffect(() => {
+    onForwardProp(forwards);
+  }, [forwards, onForwardProp]);
   //mapping
   const forwardList = forwards.map((forward, index) => {
     return <ForwardChild key={index} forwardName={forward} />;

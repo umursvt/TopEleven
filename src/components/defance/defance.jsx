@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DefanceChild from '../../components/defance/defanceChild';
 
 function randomDefance() {
@@ -19,14 +19,20 @@ function randomDefance() {
   return defanceArray[random];
 }
 
-function Defance() {
+function Defance({ onDefanceProp }) {
   const [defances, setDefance] = useState([]);
 
   const handleDefance = () => {
-    setDefance([...defances, randomDefance()]);
-    console.log(defances);
+    setDefance((prevDefances) => {
+      const newDefances = [...prevDefances, randomDefance()];
+      return newDefances;
+    });
   };
-  //mapping
+
+  useEffect(() => {
+    onDefanceProp(defances);
+  }, [defances, onDefanceProp]);
+
   const defanceList = defances.map((defance, index) => {
     return <DefanceChild key={index} defanceName={defance} />;
   });

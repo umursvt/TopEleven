@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MiddleChild from '../../components/middle/middleChild';
 
 function randomMiddle() {
@@ -24,12 +24,17 @@ function randomMiddle() {
   return middleArray[random];
 }
 
-function Middle() {
+function Middle({ onMiddleProp }) {
   const [middles, setMiddle] = useState([]);
   const handleMiddle = () => {
-    setMiddle([...middles, randomMiddle()]);
-    console.log(middles);
+    setMiddle((prevMiddles) => {
+      const newMiddles = [...middles, randomMiddle()];
+      return newMiddles;
+    });
   };
+  useEffect(() => {
+    onMiddleProp(middles);
+  }, [middles, onMiddleProp]);
   //mapping
   const middleList = middles.map((middle, index) => {
     return <MiddleChild key={index} middleName={middle} />;

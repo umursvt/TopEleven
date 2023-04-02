@@ -33,7 +33,10 @@ function forwardChild({ forwardName }) {
     <div>
       <div>
         <img className=" images-forward  " src={Forwards[forwardName]} alt="" />
-        <div className=" fs-5 fw-bold "> {forwardName} </div>
+        <div className=" fs-5 fw-bold ">
+          {' '}
+          <p className="name">{forwardName}</p>{' '}
+        </div>
       </div>
     </div>
   );

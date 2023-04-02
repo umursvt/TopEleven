@@ -19,13 +19,27 @@
 /* Background */
 .App {
   width: auto;
-  height: 99vh;
+  height: 89vh;
   background-image: url('../src/img/field/field.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.button-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+.reset {
+  background-color: orange;
+  padding: 20px;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+}
 /* Background and image responsive */
 @media (max-width: 768px) {
   .App {
@@ -37,8 +51,52 @@
   .images-keeper {
     width: 50px;
     height: 50px;
+    margin-top: 100px;
+    margin-left: 50px;
+    background-size: contain;
+    background-position: top;
+  }
+}
+@media (max-width: 768px) {
+  .images-defance {
+    width: 30px;
+    height: 30px;
 
     background-size: contain;
     background-position: top;
+  }
+}
+@media (max-width: 768px) {
+  .images-middle {
+    width: 30px;
+    height: 30px;
+    margin-left: 50px;
+
+    background-size: contain;
+    background-position: top;
+  }
+}
+@media (max-width: 768px) {
+  .images-forward {
+    width: 30px;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: 50px;
+
+    background-size: contain;
+    background-position: top;
+  }
+}
+@media (max-width: 768px) {
+  .name {
+    font-size: 10px;
+    color: black;
+    margin-left: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .name-defance {
+    font-size: 10px;
+    color: black;
   }
 }

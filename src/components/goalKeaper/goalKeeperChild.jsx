@@ -25,7 +25,10 @@ function GoalKeeperChild({ keeperName }) {
           alt="asdas"
         />
       </div>
-      <div className=" fs-1 fw-bold "> {keeperName}</div>
+      <div className=" fs-1 fw-bold ">
+        {' '}
+        <p className="name">{keeperName}</p>
+      </div>
     </div>
   );
 }
